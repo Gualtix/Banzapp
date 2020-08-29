@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DummyService } from '../../services/dummy.service'
 
 @Component({
   selector: 'app-dashboard',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiService: DummyService) { }
 
   id = 0;
 
@@ -188,6 +189,16 @@ export class DashboardComponent implements OnInit {
   
 
   ngOnInit(): void {
-  }
+  
+    this.apiService.getDummyInfo().subscribe((data: any[]) => {
+      console.log(data);
+    })
+
+    this.apiService.getDummyInfoById(1).subscribe((data: any[]) => {
+      console.log(data);
+    })
+
+}
+
 
 }
