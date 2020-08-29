@@ -17,13 +17,17 @@ namespace banzapi.DAL
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public ESCUELA()
         {
+            this.ESTUDIANTE = new HashSet<ESTUDIANTE>();
             this.PENSUM = new HashSet<PENSUM>();
         }
     
         public int id { get; set; }
         public string nombre { get; set; }
+        public int fk_facultad { get; set; }
     
         public virtual FACULTAD FACULTAD { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<ESTUDIANTE> ESTUDIANTE { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PENSUM> PENSUM { get; set; }
     }

@@ -21,6 +21,7 @@ namespace banzapi.DAL
         }
     
         public int id { get; set; }
+        public int fk_escuela { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DETALLE_PENSUM> DETALLE_PENSUM { get; set; }

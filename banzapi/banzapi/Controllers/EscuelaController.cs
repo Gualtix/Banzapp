@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.WebSockets;
 using banzapi.DAL;
 using Newtonsoft.Json;
 
@@ -18,7 +19,7 @@ namespace banzapi.Controllers
             {
                 using (BanzdbEntities db = new BanzdbEntities())
                 {
-                    List<ESCUELA> listadoEscuelas = db.ESCUELA.Select(s => s).ToList();
+                    var listadoEscuelas = db.ESCUELA.Select(s => new {s.nombre, s.id}).ToList();
                     return Ok(listadoEscuelas);
                 }
             }
@@ -40,6 +41,31 @@ namespace banzapi.Controllers
                     if (ESCUELAsearch != null)
                     {
                         return Ok(ESCUELAsearch);
+                    }
+
+                    return NotFound();
+                }
+            }
+            catch (Exception e)
+            {
+                return InternalServerError(e);
+            }
+        }
+
+        [HttpGet] // GET: api/ESCUELA/5
+        [Route("api/EscuelaFacultad/{idFacultad}")]
+
+        public IHttpActionResult GetEscuelaFacultad(string idFacultad)
+        {
+            try
+            {
+                using (BanzdbEntities db = new BanzdbEntities())
+                {
+                    int fkFacultad = Int32.Parse(idFacultad);
+                    var ESCUELAsearch = db.ESCUELA.Select(e => new {e.nombre, e.id,e.fk_facultad}).Where(e=>e.fk_facultad == fkFacultad);
+                    if (ESCUELAsearch != null)
+                    {
+                        return Ok(JsonConvert.SerializeObject(ESCUELAsearch));
                     }
 
                     return NotFound();

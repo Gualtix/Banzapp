@@ -4,22 +4,23 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="825d8d185c4843d38550b46ad599ee83" Name="Diagram1">
-        <EntityTypeShape EntityType="BanzdbModel.CURSO" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BanzdbModel.DETALLE_PENSUM" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BanzdbModel.ESCUELA" Width="1.5" PointX="1.5" PointY="10.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BanzdbModel.ESTUDIANTE" Width="1.5" PointX="5.75" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="BanzdbModel.FACULTAD" Width="1.5" PointX="1.5" PointY="13.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BanzdbModel.PENSUM" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="BanzdbModel.PRERREQUISITO" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BanzdbModel.PROGRESO" Width="1.5" PointX="8" PointY="2" IsExpanded="true" />
-        <AssociationConnector Association="BanzdbModel.FK__DETALLE_P__fk_cu__7B5B524B" ManuallyRouted="false" />
-        <AssociationConnector Association="BanzdbModel.FK__PRERREQUI__fk_cu__778AC167" ManuallyRouted="false" />
-        <AssociationConnector Association="BanzdbModel.FK__PRERREQUISI__pre__76969D2E" ManuallyRouted="false" />
-        <AssociationConnector Association="BanzdbModel.FK__DETALLE_P__fk_pe__7A672E12" ManuallyRouted="false" />
-        <AssociationConnector Association="BanzdbModel.FK__ESCUELA__fk_facu__60A75C0F" ManuallyRouted="false" />
-        <AssociationConnector Association="BanzdbModel.FK__PENSUM__fk_escue__6383C8BA" ManuallyRouted="false" />
-        <AssociationConnector Association="BanzdbModel.FK__PROGRESO__fk_est__73BA3083" ManuallyRouted="false" />
+      <Diagram DiagramId="1c30e567c197441cbd699827f565491f" Name="Diagram1">
+        <EntityTypeShape EntityType="BanzdbModel.CURSO" Width="1.5" PointX="5.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BanzdbModel.DETALLE_PENSUM" Width="1.5" PointX="7.5" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BanzdbModel.ESCUELA" Width="1.5" PointX="3" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="BanzdbModel.ESTUDIANTE" Width="1.5" PointX="5.25" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BanzdbModel.FACULTAD" Width="1.5" PointX="0.75" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="BanzdbModel.PENSUM" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BanzdbModel.PRERREQUISITO" Width="1.5" PointX="9.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="BanzdbModel.PROGRESO" Width="1.5" PointX="7.5" PointY="1.75" IsExpanded="true" />
+        <AssociationConnector Association="BanzdbModel.FK__DETALLE_P__fk_cu__1F98B2C1" ManuallyRouted="false" />
+        <AssociationConnector Association="BanzdbModel.FK__PRERREQUISI__pre__236943A5" ManuallyRouted="false" />
+        <AssociationConnector Association="BanzdbModel.FK__DETALLE_P__fk_pe__1EA48E88" ManuallyRouted="false" />
+        <AssociationConnector Association="BanzdbModel.FK__PRERREQUI__fk_de__22751F6C" ManuallyRouted="false" />
+        <AssociationConnector Association="BanzdbModel.FK__ESCUELA__fk_facu__17036CC0" ManuallyRouted="false" />
+        <AssociationConnector Association="BanzdbModel.FK__ESTUDIANT__fk_es__2645B050" ManuallyRouted="false" />
+        <AssociationConnector Association="BanzdbModel.FK__PENSUM__fk_escue__19DFD96B" ManuallyRouted="false" />
+        <AssociationConnector Association="BanzdbModel.FK__PROGRESO__fk_est__29221CFB" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

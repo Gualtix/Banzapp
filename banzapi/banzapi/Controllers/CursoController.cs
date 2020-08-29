@@ -18,8 +18,8 @@ namespace banzapi.Controllers
             {
                 using (BanzdbEntities db = new BanzdbEntities())
                 {
-                    List<CURSO> listadoCursos = db.CURSO.Select(s => s).ToList();
-                    return Ok(listadoCursos);
+                    var listadoCursos = db.CURSO.Select(s => new {s.descripcion, s.nombre,s.codigo}).ToList();
+                    return Ok(JsonConvert.SerializeObject(listadoCursos));
                 }
             }
             catch (Exception e)
@@ -64,7 +64,7 @@ namespace banzapi.Controllers
                     CURSO cursoExistente = db.CURSO.FirstOrDefault(c => c.codigo == nuevoCurso.codigo);
                     if (cursoExistente != null)
                     {
-                        cursoExistente.creditos = nuevoCurso.creditos;
+                        cursoExistente.descripcion = nuevoCurso.descripcion;
                         cursoExistente.nombre = nuevoCurso.nombre;
                         db.SaveChanges();
                     }
@@ -98,7 +98,7 @@ namespace banzapi.Controllers
                     CURSO cursoExistente = db.CURSO.FirstOrDefault(c => c.codigo == nuevoCurso.codigo);
                     if (cursoExistente != null)
                     {
-                        cursoExistente.creditos = nuevoCurso.creditos;
+                        cursoExistente.descripcion = nuevoCurso.descripcion;
                         cursoExistente.nombre = nuevoCurso.nombre;
                         db.SaveChanges();
                         return Ok();

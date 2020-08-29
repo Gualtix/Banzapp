@@ -14,12 +14,22 @@ namespace banzapi.DAL
     
     public partial class DETALLE_PENSUM
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DETALLE_PENSUM()
+        {
+            this.PRERREQUISITO = new HashSet<PRERREQUISITO>();
+        }
+    
+        public int id { get; set; }
         public int fk_pensum { get; set; }
         public int fk_curso { get; set; }
+        public int gana_credito { get; set; }
         public int no_semestre { get; set; }
         public bool obligatorio { get; set; }
     
         public virtual CURSO CURSO { get; set; }
         public virtual PENSUM PENSUM { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<PRERREQUISITO> PRERREQUISITO { get; set; }
     }
 }

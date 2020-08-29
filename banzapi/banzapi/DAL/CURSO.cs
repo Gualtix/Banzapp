@@ -19,18 +19,15 @@ namespace banzapi.DAL
         {
             this.DETALLE_PENSUM = new HashSet<DETALLE_PENSUM>();
             this.PRERREQUISITO = new HashSet<PRERREQUISITO>();
-            this.PRERREQUISITO1 = new HashSet<PRERREQUISITO>();
         }
     
         public int codigo { get; set; }
         public string nombre { get; set; }
-        public int creditos { get; set; }
+        public string descripcion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DETALLE_PENSUM> DETALLE_PENSUM { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PRERREQUISITO> PRERREQUISITO { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<PRERREQUISITO> PRERREQUISITO1 { get; set; }
     }
 }

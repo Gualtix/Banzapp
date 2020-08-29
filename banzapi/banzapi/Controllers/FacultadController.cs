@@ -19,7 +19,7 @@ namespace banzapi.Controllers
             {
                 using (BanzdbEntities db = new BanzdbEntities())
                 {
-                    List<FACULTAD> listadoFACULTADs = db.FACULTAD.Select(s => s).ToList();
+                    var listadoFACULTADs = db.FACULTAD.Select(s => new {s.nombre, s.id}).ToList();
                     return Ok(listadoFACULTADs);
                 }
             }

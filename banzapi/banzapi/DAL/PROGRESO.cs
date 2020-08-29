@@ -18,6 +18,7 @@ namespace banzapi.DAL
         public int nota { get; set; }
         public int valoracion { get; set; }
         public string comenario { get; set; }
+        public int fk_estudiante { get; set; }
     
         public virtual ESTUDIANTE ESTUDIANTE { get; set; }
     }

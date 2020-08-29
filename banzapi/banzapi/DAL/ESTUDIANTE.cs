@@ -24,7 +24,9 @@ namespace banzapi.DAL
         public string nombre { get; set; }
         public string passw { get; set; }
         public string email { get; set; }
+        public int fk_escuela { get; set; }
     
+        public virtual ESCUELA ESCUELA { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PROGRESO> PROGRESO { get; set; }
     }
