@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="825d8d185c4843d38550b46ad599ee83" Name="Diagram1">
+        <EntityTypeShape EntityType="BanzdbModel.CURSO" Width="1.5" PointX="0.75" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BanzdbModel.DETALLE_PENSUM" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BanzdbModel.ESCUELA" Width="1.5" PointX="1.5" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BanzdbModel.ESTUDIANTE" Width="1.5" PointX="5.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="BanzdbModel.FACULTAD" Width="1.5" PointX="1.5" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="BanzdbModel.PENSUM" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="BanzdbModel.PRERREQUISITO" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="BanzdbModel.PROGRESO" Width="1.5" PointX="8" PointY="2" IsExpanded="true" />
+        <AssociationConnector Association="BanzdbModel.FK__DETALLE_P__fk_cu__7B5B524B" ManuallyRouted="false" />
+        <AssociationConnector Association="BanzdbModel.FK__PRERREQUI__fk_cu__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="BanzdbModel.FK__PRERREQUISI__pre__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="BanzdbModel.FK__DETALLE_P__fk_pe__7A672E12" ManuallyRouted="false" />
+        <AssociationConnector Association="BanzdbModel.FK__ESCUELA__fk_facu__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="BanzdbModel.FK__PENSUM__fk_escue__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="BanzdbModel.FK__PROGRESO__fk_est__73BA3083" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
