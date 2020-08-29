@@ -1328,7 +1328,9 @@ File: scss
 
 #main-wrapper {
     width: 100%;
-    overflow: hidden;
+    overflow: auto;
+    overflow-x: scroll;
+    overflow-y: scroll;
 }
 
 .boxed #main-wrapper {
@@ -1353,8 +1355,11 @@ File: scss
 
 .page-wrapper {
     background: #f4f6f9;
-    padding-bottom: 60px;
     position: relative;
+    width: 5000px;
+    overflow-x: auto;
+    overflow-y: auto;
+    height: 100%;
 }
 
 .container-fluid {

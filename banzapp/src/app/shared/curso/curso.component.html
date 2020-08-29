@@ -1,0 +1,94 @@
+<!-- Card header -->
+<div>
+    <!-- Heading -->
+    <a aria-expanded="true" aria-controls="collapseUnfiled">
+
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th>
+                        <tr>{{ IdCurso }}</tr>
+                        <tr>{{ Creditos }}</tr>
+                    </th>
+
+                    <td id='{{IdCurso}}'>
+                        <tr>
+                            <h6>{{ NombreCurso }}</h6>
+
+                        </tr>
+                        <tr>
+
+                            <a (click)='mostrar()' (click)="color(this.IdCurso)" data-toggle="collapse" data-parent="#accordionEx78" href='#id{{IdSemestre}}{{IdCurso}}' class="float-right"><i class="mdi mdi-eye" ></i></a>
+
+                            <a (click)='ocultar()' data-toggle="modal" href='#modal{{IdCurso}}' class="float-right">
+                                <i class="mdi mdi-pencil-circle"></i>
+                            </a>
+
+                        </tr>
+                    </td>
+
+                    <th>
+                        <tr>797</tr>
+                        <tr>190c</tr>
+                    </th>
+                </tr>
+            </tbody>
+
+        </table>
+
+
+
+    </a>
+</div>
+
+
+<!-- Card body -->
+<div *ngIf='modalHidden' style="background-color: #FECDC0" id="collapsep">
+    <div id='id{{IdSemestre}}{{IdCurso}}' class="collapse" role="tabpanel" aria-labelledby="headingUnfiled" data-parent="#accordionEx78">
+        <div class="card-body">
+
+            <span class="font-weight-bold">Pre-Requisistos</span>
+            <li style="color: black;">797 Seminario de sistemas 1</li>
+            <br>
+            <p class="font-weight-bold">Post-Requisistos</p>
+
+            <li style="color: black;">799 Seminario de investigacion</li>
+
+        </div>
+    </div>
+</div>
+<br>
+
+
+<!-- Accordion card -->
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id='modal{{IdCurso}}' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">{{ NombreCurso }}</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body mx-3">
+
+                <div class="md-form mb-5">
+                    <h4>Ingresar Nota del Curso <i class="mdi mdi-pencil-circle"></i></h4>
+                    <input id='CursoNota{{IdCurso}}' class="form-control validate">
+                </div>
+
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button class="btn btn-default">Aceptar</button>
+            </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <a data-dismiss="modal" aria-label="Close" [routerLink]="['curso',IdCurso]">Ver mas ...</a>
+            </div>
+        </div>
+    </div>
+</div>

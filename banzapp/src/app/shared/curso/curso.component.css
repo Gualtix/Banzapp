@@ -1,0 +1,52 @@
+th {
+    background-color: #FF8D70;
+    color: black;
+}
+
+td {
+    background-color: #FECDC0;
+    color: black;
+}
+
+.what {
+    background-color: lightgreen;
+    color: black;
+}
+
+.d-collapse {
+    background-color: #FECDC0;
+    color: black;
+}
+
+h6 {
+    color: black;
+}
+
+button {
+    background-color: #FECDC0;
+    color: black;
+    border-color: #FECDC0;
+}
+
+i {
+    color: rgba(0, 0, 0, 0.836);
+    font-size: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+#example1 {
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+#collapsep {
+    border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden
+}

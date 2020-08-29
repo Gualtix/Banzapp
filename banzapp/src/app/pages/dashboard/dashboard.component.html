@@ -1,1 +1,29 @@
-<p>dashboard works!</p>
+<!--Accordion wrapper-->
+<!--div class="accordion md-accordion accordion-blocks" id="accordionEx78" role="tablist" aria-multiselectable="true"-->
+
+<div class="page-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div *ngFor="let semestre of semestres; let IdSemestre = index;">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div>
+                                <div>
+                                    <h2 style="text-align:center"><strong>{{ semestre.Semestre }}</strong></h2>
+                                    <app-curso *ngFor="let curso of semestre.Cursos; let IdCurso = index;" [NombreCurso]="curso.curso" [IdSemestre]="IdSemestre" [IdCurso]="curso.codigo" [Creditos]="curso.creditos"></app-curso>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--/.Accordion wrapper-->
