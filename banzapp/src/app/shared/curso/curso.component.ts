@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms' 
 
 @Component({
   selector: 'app-curso',
@@ -17,10 +18,15 @@ export class CursoComponent implements OnInit {
   modalHidden:boolean=true;
   modalCurso:string = 'id'+this.NombreCurso;
   colapseCurso:string = 'colapse'+this.NombreCurso;
+  formNota: FormGroup;
+  formavalida=false;
 
   constructor() { }
 
   ngOnInit(): void {
+    this.formNota = new FormGroup({
+      Nota: new FormControl(null, [Validators.required, Validators.pattern("^[0-9]*$")])
+    })
   }
 
   ocultar(){
@@ -33,4 +39,30 @@ export class CursoComponent implements OnInit {
   color(id){
     let elementTD=document.getElementById(id).setAttribute("class","what");
   }
+
+  actualizarNota(id){
+    let strid:string ='modal'+id;
+    console.log(id);
+    
+    if (this.formNota.value.Nota !== undefined && (isNaN(this.formNota.value.Nota) ||
+        this.formNota.value.Nota < 61 || this.formNota.value.Nota > 100)) {
+          this.formavalida=true;
+      return this.formNota.invalid==true;
+    }
+    
+    if(this.formNota.invalid){
+      console.log('invalido')
+      return;
+    }
+
+
+    document.getElementById(strid).click();
+    this.formavalida = false;
+    this.color(id);
+
+  }
+
+
+
+
 }
