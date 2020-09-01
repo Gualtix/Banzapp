@@ -6,12 +6,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DummyService {
 
-  private SERVER_URL = "http://jsonplaceholder.typicode.com";
+  private SERVER_URL = "https://banzapp.azurewebsites.net/api/PensumSemestre/1/1";
 
   constructor(private httpClient: HttpClient) { }
 
   public getDummyInfo() {
-    return this.httpClient.get(`${this.SERVER_URL}/users`);
+    return this.httpClient.get(`${this.SERVER_URL}`);
   }
 
   public getDummyInfoById(id) {

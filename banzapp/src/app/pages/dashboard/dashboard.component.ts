@@ -194,9 +194,9 @@ export class DashboardComponent implements OnInit {
       console.log(data);
     })
 
-    this.apiService.getDummyInfoById(1).subscribe((data: any[]) => {
+    /*this.apiService.getDummyInfoById(1).subscribe((data: any[]) => {
       console.log(data);
-    })
+    })*/
 
 }
 
