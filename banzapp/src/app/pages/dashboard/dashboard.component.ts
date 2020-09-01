@@ -8,12 +8,18 @@ import { DummyService } from '../../services/dummy.service'
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private apiService: DummyService) { }
+  constructor(private apiService: DummyService) { 
+    this.apiService.getDummyInfo().subscribe((data: any) => {
+      this.pensum=JSON.parse(data);
+    },(error =>{
+      console.log(error);
+    }));
+  }
 
   id = 0;
 
-  cursos = ['1','2','3','4','5','6'];
-
+  Semestres = ['1','2','3','4','5','6','7','8','9','10'];
+/*
   semestres = [{
                 "Semestre":'1er Semestre',
                 "Cursos":[{
@@ -97,107 +103,21 @@ export class DashboardComponent implements OnInit {
                     'curso':'Idioma Tecnico 3',
                     'creditos':'2'
                 }]
-              },{
-                
-                "Semestre":'3er Semestre',
-                "Cursos":[{
-                    'codigo':'795',
-                    'curso':'Logica De Sistemas',
-                    'creditos':'2'
-                },{
-                    'codigo':'960',
-                    'curso': 'Mate Computo 1',
-                    'creditos':'5'  
-                },{
-                    'codigo':'770',
-                    'curso':'Intr. a la Prog. y Computacion 1',
-                    'creditos':'4'
-                },{
-                    'codigo':'107',
-                    'curso':'Matematica Intermedia 1',
-                    'creditos':'10'
-                },{
-                    'codigo':'150',
-                    'curso':'Fisica 1',
-                    'creditos':'6'
-                },{
-                    'codigo':'0009',
-                    'curso':'Idioma Tecnico 3',
-                    'creditos':'2'
-                }]
-              },{
-                
-                "Semestre":'3er Semestre',
-                "Cursos":[{
-                    'codigo':'795',
-                    'curso':'Logica De Sistemas',
-                    'creditos':'2'
-                },{
-                    'codigo':'960',
-                    'curso': 'Mate Computo 1',
-                    'creditos':'5'  
-                },{
-                    'codigo':'770',
-                    'curso':'Intr. a la Prog. y Computacion 1',
-                    'creditos':'4'
-                },{
-                    'codigo':'107',
-                    'curso':'Matematica Intermedia 1',
-                    'creditos':'10'
-                },{
-                    'codigo':'150',
-                    'curso':'Fisica 1',
-                    'creditos':'6'
-                },{
-                    'codigo':'0009',
-                    'curso':'Idioma Tecnico 3',
-                    'creditos':'2'
-                }]
-              },{
-                
-                "Semestre":'3er Semestre',
-                "Cursos":[{
-                    'codigo':'795',
-                    'curso':'Logica De Sistemas',
-                    'creditos':'2'
-                },{
-                    'codigo':'960',
-                    'curso': 'Mate Computo 1',
-                    'creditos':'5'  
-                },{
-                    'codigo':'770',
-                    'curso':'Intr. a la Prog. y Computacion 1',
-                    'creditos':'4'
-                },{
-                    'codigo':'107',
-                    'curso':'Matematica Intermedia 1',
-                    'creditos':'10'
-                },{
-                    'codigo':'150',
-                    'curso':'Fisica 1',
-                    'creditos':'6'
-                },{
-                    'codigo':'0009',
-                    'curso':'Idioma Tecnico 3',
-                    'creditos':'2'
-                }]
               }
 
               
               
-]
-  
+  ]
+ */
+  pensum=[];
+
+ 
 
   ngOnInit(): void {
-  
-    this.apiService.getDummyInfo().subscribe((data: any[]) => {
-      console.log(data);
-    })
-
-    this.apiService.getDummyInfoById(1).subscribe((data: any[]) => {
-      console.log(data);
-    })
-
+    // this.ParcearJson(this.pensum);
+    //this.apiService.getDummyInfoById(1).subscribe((data: any[]) => {
+    //  console.log(data);
+    //})
 }
 
 

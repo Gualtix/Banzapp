@@ -30,14 +30,16 @@ export class CursoComponent implements OnInit {
   }
 
   ocultar(){
-    this.modalHidden=false;
+    return this.modalHidden=false;
   }
   mostrar(){
-    this.modalHidden=true;
+    return this.modalHidden=true;
   }
 
-  color(id){
-    let elementTD=document.getElementById(id).setAttribute("class","what");
+   color(id:string){
+    let elemento:HTMLElement = document.getElementById(id);
+    elemento.setAttribute('class','cursoGanado');
+    return elemento;    
   }
 
   actualizarNota(id){
