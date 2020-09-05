@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms' 
+import { DummyService } from '../../services/dummy.service';
 
 @Component({
   selector: 'app-curso',
@@ -14,14 +15,14 @@ export class CursoComponent implements OnInit {
   @Input() Creditos = 0;
   
   IdRef:string='id'+this.IdSemestre+this.IdCurso;
-  
   modalHidden:boolean=true;
   modalCurso:string = 'id'+this.NombreCurso;
   colapseCurso:string = 'colapse'+this.NombreCurso;
   formNota: FormGroup;
   formavalida=false;
+  prerequisitos=[];
 
-  constructor() { }
+  constructor(private apiService: DummyService) { }
 
   ngOnInit(): void {
     this.formNota = new FormGroup({
@@ -32,7 +33,21 @@ export class CursoComponent implements OnInit {
   ocultar(){
     return this.modalHidden=false;
   }
-  mostrar(){
+  mostrar(IdSemestre:number, IdCurso:number){
+    console.log(IdSemestre);
+    console.log(IdCurso);
+
+  
+    this.apiService.Prerequisitos(1,IdCurso).subscribe(
+      (data:any)=>{
+        if (data){
+         this.prerequisitos= JSON.parse(data);
+        }
+      },
+      err =>{
+        console.log(err);
+      }
+    )
     return this.modalHidden=true;
   }
 
