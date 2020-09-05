@@ -18,7 +18,7 @@
                         </tr>
                         <tr>
 
-                            <a (click)='mostrar()' data-toggle="collapse" data-parent="#accordionEx78" href='#id{{IdSemestre}}{{IdCurso}}' class="float-right"><i class="mdi mdi-eye" ></i></a>
+                            <a (click)='mostrar(IdSemestre,IdCurso)' data-toggle="collapse" data-parent="#accordionEx78" href='#id{{IdSemestre}}{{IdCurso}}' class="float-right"><i class="mdi mdi-eye" ></i></a>
 
                             <a (click)='ocultar()' data-toggle="modal" href='#modal{{IdCurso}}' class="float-right">
                                 <i class="mdi mdi-pencil-circle"></i>
@@ -28,8 +28,8 @@
                     </td>
 
                     <th>
-                        <tr>797</tr>
-                        <tr>190c</tr>
+                        <tr></tr>
+                        <tr></tr>
                     </th>
                 </tr>
             </tbody>
@@ -48,11 +48,10 @@
         <div class="card-body">
 
             <span class="font-weight-bold">Pre-Requisistos</span>
-            <li style="color: black;">797 Seminario de sistemas 1</li>
+            <li *ngFor="let pre of prerequisitos" style="color: black;">{{pre.codigo}} {{pre.nombre}}</li>
             <br>
             <p class="font-weight-bold">Post-Requisistos</p>
 
-            <li style="color: black;">799 Seminario de investigacion</li>
 
         </div>
     </div>
