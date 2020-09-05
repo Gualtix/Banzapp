@@ -9,3 +9,26 @@
     overflow-y: auto;
     overflow-x: auto;
 }
+
+#principal {
+    background: #f4f6f9;
+    width: calc(100% - 240px);
+    height: calc(100vh - 70px);
+    left: 240px;
+    top: 70px;
+    position: absolute;
+    overflow: scroll;
+}
+
+#column {
+    display: table-cell;
+}
+
+#columnCard {
+    width: 400px;
+    margin: 25px;
+}
+
+#courseTitle {
+    text-align:center
+}

@@ -10,6 +10,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private apiService: DummyService) { 
     this.apiService.getDummyInfo().subscribe((data: any) => {
+      console.log(data);
       this.pensum=JSON.parse(data);
     },(error =>{
       console.log(error);
@@ -114,10 +115,7 @@ export class DashboardComponent implements OnInit {
  
 
   ngOnInit(): void {
-    // this.ParcearJson(this.pensum);
-    //this.apiService.getDummyInfoById(1).subscribe((data: any[]) => {
-    //  console.log(data);
-    //})
+    
 }
 
 

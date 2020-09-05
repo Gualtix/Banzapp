@@ -15,8 +15,4 @@ export class DummyService {
   public getDummyInfo() {
     return this.httpClient.get(`${this.SERVER_URL}1/1`);
   }
-
-  //public getDummyInfoById(id) {
-    //return this.httpClient.get(`${this.SERVER_URL}/todos/${id}`);
-  //}
 }
