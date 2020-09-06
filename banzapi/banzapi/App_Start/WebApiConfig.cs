@@ -11,6 +11,12 @@ namespace banzapi
         {
             // Configuración y servicios de API web
 
+            config = GlobalConfiguration.Configuration;
+
+            config.Formatters.JsonFormatter
+                .SerializerSettings
+                .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+
             // Rutas de API web
             config.MapHttpAttributeRoutes();
 
@@ -19,6 +25,8 @@ namespace banzapi
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            
         }
     }
 }

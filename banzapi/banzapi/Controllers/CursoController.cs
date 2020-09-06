@@ -29,6 +29,7 @@ namespace banzapi.Controllers
             
         }
 
+
         [HttpGet] // GET: api/Curso/5
         public IHttpActionResult Get(int id)
         {
@@ -40,6 +41,33 @@ namespace banzapi.Controllers
                     if (cursoBuscado != null)
                     {
                         return Ok(cursoBuscado);
+                    }
+
+                    return NotFound();
+                }
+            }
+            catch (Exception e)
+            {
+                return InternalServerError(e);
+            }
+        }
+
+        [HttpGet] // GET: api/Curso/5
+        [Route("api/Pensum/{idPensum}/Curso/{idCurso}")]
+        public IHttpActionResult GetCursoPrerrequisito(string idCurso, string idPensum)
+        {
+            try
+            {
+                int fkCurso = int.Parse(idCurso);
+                int fkPensum = int.Parse(idPensum);
+                using (BanzdbEntities db = new BanzdbEntities())
+                {
+                    var cursosPre = db.PRERREQUISITO
+                        .Select(pr => new {pr.CURSO.nombre, pr.CURSO.codigo, pr.CURSO.descripcion, pr.DETALLE_PENSUM.fk_curso, pr.DETALLE_PENSUM.fk_pensum})
+                        .Where(pr => pr.fk_curso == fkCurso && pr.fk_pensum == fkPensum).ToList();
+                    if (cursosPre.Any())
+                    {
+                        return Ok(JsonConvert.SerializeObject(cursosPre));
                     }
 
                     return NotFound();

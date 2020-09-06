@@ -35,6 +35,7 @@ namespace banzapi.Controllers
         {
             try
             {
+
                 using (BanzdbEntities db = new BanzdbEntities())
                 {
                     ESTUDIANTE ESTUDIANTEsearch = db.ESTUDIANTE.FirstOrDefault(s => s.carnet == id);

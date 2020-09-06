@@ -54,7 +54,6 @@ namespace banzapi.Controllers
 
         [HttpGet] // GET: api/ESCUELA/5
         [Route("api/EscuelaFacultad/{idFacultad}")]
-
         public IHttpActionResult GetEscuelaFacultad(string idFacultad)
         {
             try
