@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "banzapp"
+    }
+  },
+  "defaultProject": "banzapp",
+  "cli": {
+    "analytics": "e558e275-d167-4d09-8ff9-200d9deef4cf"
+  }
 }
