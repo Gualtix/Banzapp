@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BDBModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="CURSO">
+      <EntityTypeMapping TypeName="BDBModel.CURSO">
+        <MappingFragment StoreEntitySet="CURSO">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="creditos" ColumnName="creditos" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DETALLE_PENSUM">
+      <EntityTypeMapping TypeName="BDBModel.DETALLE_PENSUM">
+        <MappingFragment StoreEntitySet="DETALLE_PENSUM">
+          <ScalarProperty Name="fk_pensum" ColumnName="fk_pensum" />
+          <ScalarProperty Name="fk_curso" ColumnName="fk_curso" />
+          <ScalarProperty Name="no_semestre" ColumnName="no_semestre" />
+          <ScalarProperty Name="obligatorio" ColumnName="obligatorio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESCUELA">
+      <EntityTypeMapping TypeName="BDBModel.ESCUELA">
+        <MappingFragment StoreEntitySet="ESCUELA">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ESTUDIANTE">
+      <EntityTypeMapping TypeName="BDBModel.ESTUDIANTE">
+        <MappingFragment StoreEntitySet="ESTUDIANTE">
+          <ScalarProperty Name="carnet" ColumnName="carnet" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="passw" ColumnName="passw" />
+          <ScalarProperty Name="email" ColumnName="email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FACULTAD">
+      <EntityTypeMapping TypeName="BDBModel.FACULTAD">
+        <MappingFragment StoreEntitySet="FACULTAD">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PENSUM">
+      <EntityTypeMapping TypeName="BDBModel.PENSUM">
+        <MappingFragment StoreEntitySet="PENSUM">
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PRERREQUISITO">
+      <EntityTypeMapping TypeName="BDBModel.PRERREQUISITO">
+        <MappingFragment StoreEntitySet="PRERREQUISITO">
+          <ScalarProperty Name="pre" ColumnName="pre" />
+          <ScalarProperty Name="fk_curso" ColumnName="fk_curso" />
+          <ScalarProperty Name="credito" ColumnName="credito" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PROGRESO">
+      <EntityTypeMapping TypeName="BDBModel.PROGRESO">
+        <MappingFragment StoreEntitySet="PROGRESO">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+          <ScalarProperty Name="valoracion" ColumnName="valoracion" />
+          <ScalarProperty Name="comenario" ColumnName="comenario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK__ESCUELA__fk_facu__60A75C0F" TypeName="BDBModel.FK__ESCUELA__fk_facu__60A75C0F" StoreEntitySet="ESCUELA">
+      <EndProperty Name="FACULTAD">
+        <ScalarProperty Name="id" ColumnName="fk_facultad" />
+      </EndProperty>
+      <EndProperty Name="ESCUELA">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__PENSUM__fk_escue__6383C8BA" TypeName="BDBModel.FK__PENSUM__fk_escue__6383C8BA" StoreEntitySet="PENSUM">
+      <EndProperty Name="ESCUELA">
+        <ScalarProperty Name="id" ColumnName="fk_escuela" />
+      </EndProperty>
+      <EndProperty Name="PENSUM">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK__PROGRESO__fk_est__73BA3083" TypeName="BDBModel.FK__PROGRESO__fk_est__73BA3083" StoreEntitySet="PROGRESO">
+      <EndProperty Name="ESTUDIANTE">
+        <ScalarProperty Name="carnet" ColumnName="fk_estudiante" />
+      </EndProperty>
+      <EndProperty Name="PROGRESO">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
