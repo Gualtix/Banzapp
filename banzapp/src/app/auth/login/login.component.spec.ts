@@ -22,4 +22,17 @@ describe('LoginComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+
+  it('Debe crear un formulario con dos inputs y un boton',()=>{
+    const username = fixture.debugElement.nativeElement.querySelector('#user');
+    const password = fixture.debugElement.nativeElement.querySelector('#password');
+    const loginBtn = fixture.debugElement.nativeElement.querySelector('#boton_login');
+    expect(username).toBeDefined();
+    expect(password).toBeDefined();
+    expect(loginBtn).toBeDefined();
+  });
+
+
+
 });
