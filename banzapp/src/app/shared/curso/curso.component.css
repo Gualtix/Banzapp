@@ -1,0 +1,111 @@
+.cursoGanado {
+    background-color: lightgreen;
+    color: black;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    height: auto;
+    width: 285px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.d-collapse {
+    background-color: #FECDC0;
+    color: black;
+}
+
+h6 {
+    color: black;
+}
+
+button {
+    background-color: #FECDC0;
+    color: black;
+    border-color: #FECDC0;
+}
+
+i {
+    color: rgba(0, 0, 0, 0.836);
+    font-size: 30px;
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden;
+}
+
+#example1 {
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+#collapsep {
+    border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden
+}
+
+.color-left {
+    background-color: #FF8D70;
+    color: black;
+    font-weight: bold;
+    border-radius: 15px 0px 0px 15px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 25px;
+    height: auto;
+    width: 50px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.color-mid {
+    background-color: #FECDC0;
+    color: black;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 10px;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+    height: auto;
+    width: 285px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.color-right {
+    background-color: #FF8D70;
+    color: black;
+    border-radius: 0px 15px 15px 0px;
+    height: auto;
+    width: 15px;
+}
+
+.modales {
+    left: 0px;
+    height: auto;
+    width: 350px;
+}
+
+.card {
+    background: #fff;
+    transition: .3s transform cubic-bezier(.155, 1.105, .295, 1.12), .3s box-shadow, .3s -webkit-transform cubic-bezier(.155, 1.105, .295, 1.12);
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .12), 0 4px 8px rgba(0, 0, 0, .06);
+}
+
+#modales {
+    top: 0px;
+}

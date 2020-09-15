@@ -1,0 +1,97 @@
+<div class="card">
+
+    <div class="card-body">
+        <!-- Card header -->
+
+        <!-- Heading -->
+        <a aria-expanded="true" aria-controls="collapseUnfiled">
+
+            <div class="row">
+                <div class="color-left">
+
+                    <p>{{ IdCurso }} <br> {{ Creditos }}</p>
+
+                </div>
+                <div class="color-mid" id='{{IdCurso}}'>
+                    <p class="float-center">{{ NombreCurso }}</p>
+                    <div>
+
+                        <a (click)='mostrar(IdSemestre,IdCurso)' data-toggle="collapse" data-parent="#accordionEx78" href='#id{{IdSemestre}}{{IdCurso}}' class="float-right">
+                            <i class="mdi mdi-eye"></i>
+                        </a>
+
+                        <a (click)='ocultar()' data-toggle="modal" href='#modal{{IdCurso}}' class="float-right">
+                            <i class="mdi mdi-pencil-circle"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="color-right ">
+                </div>
+            </div>
+
+        </a>
+
+        <div class="row" *ngIf='modalHidden' style="background-color: #FECDC0" id="collapsep">
+            <div id='id{{IdSemestre}}{{IdCurso}}' class="collapse" role="tabpanel" aria-labelledby="headingUnfiled" data-parent="#accordionEx78">
+                <div class="card-body">
+                    <div>
+
+                        <span class="font-weight-bold">Pre-Requisistos</span>
+                        <li *ngFor="let pre of prerequisitos" style="color: black;">{{pre.codigo}} {{pre.nombre}}</li>
+                        <br>
+                        <p class="font-weight-bold">Post-Requisistos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- Card body -->
+
+
+
+
+
+<!-- Accordion card -->
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id='modal{{IdCurso}}' tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">{{ NombreCurso }}</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <form ngNativeValidate [formGroup]="formNota" (ngSubmit)="actualizarNota( IdCurso )">
+
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5 form-group">
+                        <h4>Ingresar Nota del Curso <i class="mdi mdi-pencil-circle"></i></h4>
+                        <input id='CursoNota{{IdCurso}}' formControlName="Nota" name="Nota" type="number" class="form-control" placeholder="Ingresa tu Nota" required>
+                        <h4 style="color:red;" *ngIf="formavalida">Valor invalido</h4>
+                    </div>
+                </div>
+
+
+                <div class="modal-footer d-flex justify-content-center">
+                    <button type="submit" class="btn btn-default">Aceptar</button>
+                </div>
+
+            </form>
+            <div class="modal-footer d-flex justify-content-center">
+                <a data-dismiss="modal" aria-label="Close" [routerLink]="['curso',IdCurso]">Ver mas ...</a>
+            </div>
+
+        </div>
+    </div>
+</div>

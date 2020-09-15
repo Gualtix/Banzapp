@@ -1,0 +1,19 @@
+<div id="principal">
+    <div id="column" *ngFor="let semestre of Semestres; let IdSemestre = index;">
+        <div id="columnCard">
+            <div class="card">
+                <div class="card-body">
+                    <div>
+                        <div>
+                            <h2 id="courseTitle"><strong>Semestre {{IdSemestre+1}}</strong></h2>
+                            <div *ngFor="let pem of pensum; let IdCurso = index;">
+                                <app-curso *ngIf="pem.semestre == IdSemestre + 1" [NombreCurso]="pem.nombre" [IdSemestre]="IdSemestre" [IdCurso]="pem.codigo" [Creditos]="pem.gana_credito">
+                                </app-curso>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
