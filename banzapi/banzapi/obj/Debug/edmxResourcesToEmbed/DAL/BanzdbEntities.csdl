@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BanzdbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CURSO">
+    <Key>
+      <PropertyRef Name="codigo" />
+    </Key>
+    <Property Name="codigo" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="DETALLE_PENSUM" Relationship="Self.FK__DETALLE_P__fk_cu__1F98B2C1" FromRole="CURSO" ToRole="DETALLE_PENSUM" />
+    <NavigationProperty Name="PRERREQUISITO" Relationship="Self.FK__PRERREQUISI__pre__236943A5" FromRole="CURSO" ToRole="PRERREQUISITO" />
+  </EntityType>
+  <EntityType Name="DETALLE_PENSUM">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fk_pensum" Type="Int32" Nullable="false" />
+    <Property Name="fk_curso" Type="Int32" Nullable="false" />
+    <Property Name="gana_credito" Type="Int32" Nullable="false" />
+    <Property Name="no_semestre" Type="Int32" Nullable="false" />
+    <Property Name="obligatorio" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="CURSO" Relationship="Self.FK__DETALLE_P__fk_cu__1F98B2C1" FromRole="DETALLE_PENSUM" ToRole="CURSO" />
+    <NavigationProperty Name="PENSUM" Relationship="Self.FK__DETALLE_P__fk_pe__1EA48E88" FromRole="DETALLE_PENSUM" ToRole="PENSUM" />
+    <NavigationProperty Name="PRERREQUISITO" Relationship="Self.FK__PRERREQUI__fk_de__22751F6C" FromRole="DETALLE_PENSUM" ToRole="PRERREQUISITO" />
+  </EntityType>
+  <EntityType Name="ESCUELA">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fk_facultad" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="FACULTAD" Relationship="Self.FK__ESCUELA__fk_facu__17036CC0" FromRole="ESCUELA" ToRole="FACULTAD" />
+    <NavigationProperty Name="ESTUDIANTE" Relationship="Self.FK__ESTUDIANT__fk_es__2645B050" FromRole="ESCUELA" ToRole="ESTUDIANTE" />
+    <NavigationProperty Name="PENSUM" Relationship="Self.FK__PENSUM__fk_escue__19DFD96B" FromRole="ESCUELA" ToRole="PENSUM" />
+  </EntityType>
+  <EntityType Name="ESTUDIANTE">
+    <Key>
+      <PropertyRef Name="carnet" />
+    </Key>
+    <Property Name="carnet" Type="Int32" Nullable="false" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="passw" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fk_escuela" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ESCUELA" Relationship="Self.FK__ESTUDIANT__fk_es__2645B050" FromRole="ESTUDIANTE" ToRole="ESCUELA" />
+    <NavigationProperty Name="PROGRESO" Relationship="Self.FK__PROGRESO__fk_est__29221CFB" FromRole="ESTUDIANTE" ToRole="PROGRESO" />
+  </EntityType>
+  <EntityType Name="FACULTAD">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ESCUELA" Relationship="Self.FK__ESCUELA__fk_facu__17036CC0" FromRole="FACULTAD" ToRole="ESCUELA" />
+  </EntityType>
+  <EntityType Name="PENSUM">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fk_escuela" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="DETALLE_PENSUM" Relationship="Self.FK__DETALLE_P__fk_pe__1EA48E88" FromRole="PENSUM" ToRole="DETALLE_PENSUM" />
+    <NavigationProperty Name="ESCUELA" Relationship="Self.FK__PENSUM__fk_escue__19DFD96B" FromRole="PENSUM" ToRole="ESCUELA" />
+  </EntityType>
+  <EntityType Name="PRERREQUISITO">
+    <Key>
+      <PropertyRef Name="fk_detalle_pensum" />
+      <PropertyRef Name="pre" />
+    </Key>
+    <Property Name="fk_detalle_pensum" Type="Int32" Nullable="false" />
+    <Property Name="pre" Type="Int32" Nullable="false" />
+    <Property Name="credito" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CURSO" Relationship="Self.FK__PRERREQUISI__pre__236943A5" FromRole="PRERREQUISITO" ToRole="CURSO" />
+    <NavigationProperty Name="DETALLE_PENSUM" Relationship="Self.FK__PRERREQUI__fk_de__22751F6C" FromRole="PRERREQUISITO" ToRole="DETALLE_PENSUM" />
+  </EntityType>
+  <EntityType Name="PROGRESO">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nota" Type="Int32" Nullable="false" />
+    <Property Name="valoracion" Type="Int32" Nullable="false" />
+    <Property Name="comenario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fk_estudiante" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="ESTUDIANTE" Relationship="Self.FK__PROGRESO__fk_est__29221CFB" FromRole="PROGRESO" ToRole="ESTUDIANTE" />
+  </EntityType>
+  <Association Name="FK__DETALLE_P__fk_cu__1F98B2C1">
+    <End Role="CURSO" Type="Self.CURSO" Multiplicity="1" />
+    <End Role="DETALLE_PENSUM" Type="Self.DETALLE_PENSUM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CURSO">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="DETALLE_PENSUM">
+        <PropertyRef Name="fk_curso" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRERREQUISI__pre__236943A5">
+    <End Role="CURSO" Type="Self.CURSO" Multiplicity="1" />
+    <End Role="PRERREQUISITO" Type="Self.PRERREQUISITO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CURSO">
+        <PropertyRef Name="codigo" />
+      </Principal>
+      <Dependent Role="PRERREQUISITO">
+        <PropertyRef Name="pre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__DETALLE_P__fk_pe__1EA48E88">
+    <End Role="PENSUM" Type="Self.PENSUM" Multiplicity="1" />
+    <End Role="DETALLE_PENSUM" Type="Self.DETALLE_PENSUM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PENSUM">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="DETALLE_PENSUM">
+        <PropertyRef Name="fk_pensum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PRERREQUI__fk_de__22751F6C">
+    <End Role="DETALLE_PENSUM" Type="Self.DETALLE_PENSUM" Multiplicity="1" />
+    <End Role="PRERREQUISITO" Type="Self.PRERREQUISITO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DETALLE_PENSUM">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="PRERREQUISITO">
+        <PropertyRef Name="fk_detalle_pensum" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ESCUELA__fk_facu__17036CC0">
+    <End Role="FACULTAD" Type="Self.FACULTAD" Multiplicity="1" />
+    <End Role="ESCUELA" Type="Self.ESCUELA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FACULTAD">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ESCUELA">
+        <PropertyRef Name="fk_facultad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ESTUDIANT__fk_es__2645B050">
+    <End Role="ESCUELA" Type="Self.ESCUELA" Multiplicity="1" />
+    <End Role="ESTUDIANTE" Type="Self.ESTUDIANTE" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESCUELA">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ESTUDIANTE">
+        <PropertyRef Name="fk_escuela" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PENSUM__fk_escue__19DFD96B">
+    <End Role="ESCUELA" Type="Self.ESCUELA" Multiplicity="1" />
+    <End Role="PENSUM" Type="Self.PENSUM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESCUELA">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="PENSUM">
+        <PropertyRef Name="fk_escuela" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__PROGRESO__fk_est__29221CFB">
+    <End Role="ESTUDIANTE" Type="Self.ESTUDIANTE" Multiplicity="1" />
+    <End Role="PROGRESO" Type="Self.PROGRESO" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ESTUDIANTE">
+        <PropertyRef Name="carnet" />
+      </Principal>
+      <Dependent Role="PROGRESO">
+        <PropertyRef Name="fk_estudiante" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BanzdbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CURSO" EntityType="Self.CURSO" />
+    <EntitySet Name="DETALLE_PENSUM" EntityType="Self.DETALLE_PENSUM" />
+    <EntitySet Name="ESCUELA" EntityType="Self.ESCUELA" />
+    <EntitySet Name="ESTUDIANTE" EntityType="Self.ESTUDIANTE" />
+    <EntitySet Name="FACULTAD" EntityType="Self.FACULTAD" />
+    <EntitySet Name="PENSUM" EntityType="Self.PENSUM" />
+    <EntitySet Name="PRERREQUISITO" EntityType="Self.PRERREQUISITO" />
+    <EntitySet Name="PROGRESO" EntityType="Self.PROGRESO" />
+    <AssociationSet Name="FK__DETALLE_P__fk_cu__1F98B2C1" Association="Self.FK__DETALLE_P__fk_cu__1F98B2C1">
+      <End Role="CURSO" EntitySet="CURSO" />
+      <End Role="DETALLE_PENSUM" EntitySet="DETALLE_PENSUM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRERREQUISI__pre__236943A5" Association="Self.FK__PRERREQUISI__pre__236943A5">
+      <End Role="CURSO" EntitySet="CURSO" />
+      <End Role="PRERREQUISITO" EntitySet="PRERREQUISITO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__DETALLE_P__fk_pe__1EA48E88" Association="Self.FK__DETALLE_P__fk_pe__1EA48E88">
+      <End Role="PENSUM" EntitySet="PENSUM" />
+      <End Role="DETALLE_PENSUM" EntitySet="DETALLE_PENSUM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PRERREQUI__fk_de__22751F6C" Association="Self.FK__PRERREQUI__fk_de__22751F6C">
+      <End Role="DETALLE_PENSUM" EntitySet="DETALLE_PENSUM" />
+      <End Role="PRERREQUISITO" EntitySet="PRERREQUISITO" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ESCUELA__fk_facu__17036CC0" Association="Self.FK__ESCUELA__fk_facu__17036CC0">
+      <End Role="FACULTAD" EntitySet="FACULTAD" />
+      <End Role="ESCUELA" EntitySet="ESCUELA" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ESTUDIANT__fk_es__2645B050" Association="Self.FK__ESTUDIANT__fk_es__2645B050">
+      <End Role="ESCUELA" EntitySet="ESCUELA" />
+      <End Role="ESTUDIANTE" EntitySet="ESTUDIANTE" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PENSUM__fk_escue__19DFD96B" Association="Self.FK__PENSUM__fk_escue__19DFD96B">
+      <End Role="ESCUELA" EntitySet="ESCUELA" />
+      <End Role="PENSUM" EntitySet="PENSUM" />
+    </AssociationSet>
+    <AssociationSet Name="FK__PROGRESO__fk_est__29221CFB" Association="Self.FK__PROGRESO__fk_est__29221CFB">
+      <End Role="ESTUDIANTE" EntitySet="ESTUDIANTE" />
+      <End Role="PROGRESO" EntitySet="PROGRESO" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
