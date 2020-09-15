@@ -25,6 +25,10 @@ export class DummyService {
     )
   }
 
+  public registro(){
+    
+  }
+
 
 
 

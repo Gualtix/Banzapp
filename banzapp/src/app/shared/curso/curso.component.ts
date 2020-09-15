@@ -20,7 +20,7 @@ export class CursoComponent implements OnInit {
   colapseCurso:string = 'colapse'+this.NombreCurso;
   formNota: FormGroup;
   formavalida=false;
-  prerequisitos=[];
+  prerequisitos=[{"nombre":"No tiene","codigo": null,"descripcion":"","fk_curso":19,"fk_pensum":1}];
 
   constructor(private apiService: DummyService) { }
 
