@@ -9,6 +9,7 @@
 
 namespace banzapi.DAL
 {
+    using System.ComponentModel.DataAnnotations;
     using System;
     using System.Collections.Generic;
     
@@ -21,6 +22,7 @@ namespace banzapi.DAL
             this.PRERREQUISITO = new HashSet<PRERREQUISITO>();
         }
     
+        [Key]
         public int codigo { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }

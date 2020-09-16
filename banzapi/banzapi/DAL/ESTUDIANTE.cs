@@ -11,7 +11,8 @@ namespace banzapi.DAL
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ESTUDIANTE
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -20,6 +21,7 @@ namespace banzapi.DAL
             this.PROGRESO = new HashSet<PROGRESO>();
         }
     
+        [Key]
         public int carnet { get; set; }
         public string nombre { get; set; }
         public string passw { get; set; }

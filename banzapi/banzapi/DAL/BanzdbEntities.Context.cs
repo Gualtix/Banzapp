@@ -16,14 +16,14 @@ namespace banzapi.DAL
     public partial class BanzdbEntities : DbContext
     {
         public BanzdbEntities()
-            : base("name=BanzdbEntities")
+            : base("BanzdbEntities")
         {
         }
     
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        /*protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
-        }
+        }*/
     
         public virtual DbSet<CURSO> CURSO { get; set; }
         public virtual DbSet<DETALLE_PENSUM> DETALLE_PENSUM { get; set; }

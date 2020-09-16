@@ -11,13 +11,17 @@ namespace banzapi.DAL
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class PRERREQUISITO
     {
-        public int fk_detalle_pensum { get; set; }
+        
+        [Key]
         public int pre { get; set; }
         public int credito { get; set; }
-    
+
+        public int fk_detalle_pensum { get; set; }
+
         public virtual CURSO CURSO { get; set; }
         public virtual DETALLE_PENSUM DETALLE_PENSUM { get; set; }
     }
