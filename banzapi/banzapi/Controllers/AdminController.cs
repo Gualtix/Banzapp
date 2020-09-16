@@ -40,5 +40,50 @@ namespace banzapi.Controllers
                 return InternalServerError(e);
             }
         }
+
+        StudentRepository repository;
+
+        public AdminController(StudentRepository repository) {
+            this.repository = repository;
+        }
+
+        [HttpPost] // POST: api/Estudiante 
+        [Route("api/Admin/Registro")]
+        public IHttpActionResult PostResgistro(ESTUDIANTE student)
+        {
+            if (String.IsNullOrWhiteSpace(student.email)) {
+                return BadRequest("El email es requerido");
+            }
+
+            if (student.carnet <= 0) {
+                return BadRequest("Número de carnet inválido");
+            }
+
+            repository.InsertStudent(student);
+            return CreatedAtRoute("DefaultApi", new { id = student.carnet, email = student.email }, student);
+
+        /*try
+        {
+            ESTUDIANTE nuevoEstudiante = JsonConvert.DeserializeObject<ESTUDIANTE>(value);
+            using (BanzdbEntities db = new BanzdbEntities())
+            {
+                ESTUDIANTE estudianteExistente = db.ESTUDIANTE.FirstOrDefault(c => c.carnet == nuevoEstudiante.carnet);
+                if (estudianteExistente != null)
+                {
+                    return Content(HttpStatusCode.BadRequest, "El estudiante ya existe");
+                }
+                else {
+                    db.ESTUDIANTE.Add(nuevoEstudiante);
+                    db.SaveChanges();
+                    return Ok("Estudiante registrado");
+                }
+            }
+
+        }
+        catch (Exception e)
+        {
+            return InternalServerError(e);
+        }*/
+    }
     }
 }
