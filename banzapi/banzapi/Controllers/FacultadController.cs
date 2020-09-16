@@ -120,10 +120,8 @@ namespace banzapi.Controllers
         {
             try
             {
-
                 using (BanzdbEntities db = new BanzdbEntities())
                 {
-
                     FACULTAD FACULTADExistente = db.FACULTAD.FirstOrDefault(c => c.id == id);
                     if (FACULTADExistente != null)
                     {
