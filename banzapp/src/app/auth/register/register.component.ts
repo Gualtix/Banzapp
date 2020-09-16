@@ -13,8 +13,5 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public registro (){
-
-  }
 
 }

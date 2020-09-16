@@ -25,13 +25,6 @@ export class DummyService {
     )
   }
 
-  public registro(){
-    
-  }
-
-
-
-
   public Prerequisitos(idPensum: number, idCurso: number){
   
     const url = this.SERVER_PRE+idPensum+"/Curso/"+idCurso;
