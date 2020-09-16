@@ -35,9 +35,9 @@ namespace banzapi.Tests
             IHttpActionResult actionResult = controller.PostResgistro(model);
             var createdResult = actionResult as CreatedAtRouteNegotiatedContentResult<ESTUDIANTE>;
 
-            //Assert.IsNotNull(createdResult);
-            //Assert.AreEqual("DefaultApi", createdResult.RouteName);
-            //Assert.AreEqual(model.email, createdResult.RouteValues["email"]);
+            Assert.IsNotNull(createdResult);
+            Assert.AreEqual("DefaultApi", createdResult.RouteName);
+            Assert.AreEqual(model.email, createdResult.RouteValues["email"]);
         }
     }
 }
