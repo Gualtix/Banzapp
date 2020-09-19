@@ -47,6 +47,10 @@ namespace banzapi.Controllers
             this.repository = repository;
         }
 
+        public AdminController() {
+            this.repository = new StudentRepository(new BanzdbEntities());
+        }
+
         [HttpPost] // POST: api/Estudiante 
         [Route("api/Admin/Registro")]
         public IHttpActionResult PostResgistro(ESTUDIANTE student)
@@ -64,7 +68,8 @@ namespace banzapi.Controllers
             }
 
             repository.InsertStudent(student);
-            return CreatedAtRoute("DefaultApi", new { id = student.carnet, email = student.email }, student);
+            String result = "estudiante registrado";
+            return Ok(result);
         }
     }
 }
