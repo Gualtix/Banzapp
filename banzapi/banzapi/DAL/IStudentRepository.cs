@@ -7,7 +7,10 @@ namespace banzapi.DAL
 {
     public interface IStudentRepository : IDisposable
     {
-        void InsertStudent(ESTUDIANTE student);
+        ESTUDIANTE findById(int carnet);
+        bool InsertStudent(ESTUDIANTE student);
         void Save();
+
+        IList<ESTUDIANTE> findAll();
     }
 }

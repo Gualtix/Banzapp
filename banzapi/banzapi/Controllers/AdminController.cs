@@ -59,31 +59,12 @@ namespace banzapi.Controllers
                 return BadRequest("Número de carnet inválido");
             }
 
-            repository.InsertStudent(student);
-            return CreatedAtRoute("DefaultApi", new { id = student.carnet, email = student.email }, student);
-
-        /*try
-        {
-            ESTUDIANTE nuevoEstudiante = JsonConvert.DeserializeObject<ESTUDIANTE>(value);
-            using (BanzdbEntities db = new BanzdbEntities())
-            {
-                ESTUDIANTE estudianteExistente = db.ESTUDIANTE.FirstOrDefault(c => c.carnet == nuevoEstudiante.carnet);
-                if (estudianteExistente != null)
-                {
-                    return Content(HttpStatusCode.BadRequest, "El estudiante ya existe");
-                }
-                else {
-                    db.ESTUDIANTE.Add(nuevoEstudiante);
-                    db.SaveChanges();
-                    return Ok("Estudiante registrado");
-                }
+            if (repository.findById(student.carnet) != null) {
+                return BadRequest("El estudiante ya existe");
             }
 
+            repository.InsertStudent(student);
+            return CreatedAtRoute("DefaultApi", new { id = student.carnet, email = student.email }, student);
         }
-        catch (Exception e)
-        {
-            return InternalServerError(e);
-        }*/
-    }
     }
 }

@@ -13,10 +13,13 @@ namespace banzapi.DAL
             this.Context = context;
         }
 
-        public void InsertStudent(ESTUDIANTE student)
+
+
+        public bool InsertStudent(ESTUDIANTE student)
         {
             this.Context.ESTUDIANTE.Add(student);
             this.Context.SaveChanges();
+            return true;
         }
 
         public void Save()
@@ -42,6 +45,16 @@ namespace banzapi.DAL
         {
             Dispose(true);
             GC.SuppressFinalize(this);
+        }
+
+        public ESTUDIANTE findById(int carnet)
+        {
+            return this.Context.ESTUDIANTE.Find(carnet);
+        }
+
+        public IList<ESTUDIANTE> findAll()
+        {
+            return this.Context.ESTUDIANTE.ToList();
         }
     }
 }
