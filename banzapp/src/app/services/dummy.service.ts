@@ -40,4 +40,8 @@ export class DummyService {
     )
 
   }
+
+  public login(){
+    
+  }
 }
