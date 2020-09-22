@@ -37,4 +37,8 @@ export class DummyService {
     )
 
   }
+
+  public Registro(){
+    
+  }
 }

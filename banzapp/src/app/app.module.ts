@@ -14,6 +14,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { CursoComponent } from './shared/curso/curso.component';
 import { PageCursoComponent } from './shared/page-curso/page-curso.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PageComponent } from './pages/page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SidebarComponent,
     HeaderComponent,
     CursoComponent,
-    PageCursoComponent
+    PageCursoComponent,
+    PageComponent
   ],
   imports: [
     BrowserModule,

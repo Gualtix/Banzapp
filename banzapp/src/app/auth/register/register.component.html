@@ -1,1 +1,90 @@
-<p>register works!</p>
+<!-- ============================================================== -->
+<!-- Main wrapper - style you can find in pages.scss -->
+<!-- ============================================================== -->
+<div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+    <div class="wrapper wrapper--w790">
+        <div class="card card-5">
+            <div class="card-heading">
+                <h2 class="title">Registro de Alumno</h2>
+            </div>
+            <div class="card-body">
+                <form ngNativeValidate [formGroup]="forma" (ngSubmit)='registrarEstudiante()'>
+
+                    <div class="form-row">
+                        <div class="name">Nombre</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input formControlName="firstName" name="firstName" class="input--style-5" type="text" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Apellido</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input formControlName="lastName" name="lastName" class="input--style-5" type="text" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Carnet</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input formControlName="carnet" name="carnet" class="input--style-5" type="text" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Carrera</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input formControlName="carrera" name="carrera" class="input--style-5" type="text" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="name">Contraseña</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input formControlName="password" name="password" class="input--style-5" type="text" required>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="name">Confirmar Contraseña</div>
+                        <div class="value">
+                            <div class="input-group">
+                                <input formControlName="password2" name="password2" class="input--style-5" type="text" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+
+                        <div class="input-group">
+                            <div class="col-sm-12 text-right">
+                                <button routerLinkActive="router-link-active" type="submit" class="btn btn--radius-2 btn--green">Crear</button>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="col-sm-12 text-center">
+                        Ya tienes una cuenta? <a routerLink='/login' class="text-info m-l-5"><b>Inicia sesión</b></a>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================================================== -->
+<!-- End Wrapper -->
+<!-- ============================================================== -->
+<!-- ============================================================== -->

@@ -26,19 +26,19 @@ describe('Pruebas de CursoComponent', () => {
 
 
 
-  it('Debe de regresar un false', () => {
+  xit('Debe de regresar un false', () => {
     const ocultar = new CursoComponent(apiService);
     const prueba = ocultar.ocultar(); 
     expect( prueba ).toBe(false);
   });
 
-  it('Debe de regresar un true', () => {
+  xit('Debe de regresar un true', () => {
     const mostrar = new CursoComponent(apiService);
     const prueba = mostrar.mostrar(1,17); 
     expect( prueba ).toBe(true);
   });
 
-  it('Debe de regresar un elemento td', () => {
+  xit('Debe de regresar un elemento td', () => {
     const curso = new CursoComponent(apiService);
     const elemento = curso.color('017'); 
     // elementotd = ComponentFixture.debugElment.query(Bu.css('.addItem'));
