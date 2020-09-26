@@ -9,7 +9,7 @@
             </div>
             <div class="card-body">
                 <form ngNativeValidate
-                    [formGroup]="loginForm"
+                    [formGroup]="formulario"
                     (ngSubmit)="login()"
                     id="loginform">
 
@@ -18,7 +18,7 @@
                         <div class="value">
                             <div class="input-group">
                                 <input ngModel name="usuario" class="input--style-5" type="text" placeholder="usuario" required 
-                                formControlName="usuario">
+                                formControlName="userName">
                             </div>
                         </div>
                     </div>
