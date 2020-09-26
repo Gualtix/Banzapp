@@ -12,9 +12,9 @@ using Newtonsoft.Json;
 
 namespace banzapi.Controllers
 {
-    [AllowCrossSite]
     public class AdminController : ApiController
     {
+        [AllowCrossSite]
         [HttpPost] // POST: api/ESTUDIANTE
         [Route("api/Admin/Login")]
         public IHttpActionResult Post(FormDataCollection  form)
@@ -53,6 +53,7 @@ namespace banzapi.Controllers
             this.repository = new StudentRepository(new BanzdbEntities());
         }
 
+        [AllowCrossSite]
         [HttpPost] // POST: api/Estudiante 
         [Route("api/Admin/Registro")]
         public IHttpActionResult PostResgistro(ESTUDIANTE student)
