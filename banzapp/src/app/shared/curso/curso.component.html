@@ -1,62 +1,60 @@
-<!-- Card header -->
-<div>
-    <!-- Heading -->
-    <a aria-expanded="true" aria-controls="collapseUnfiled">
+<div class="card">
 
-        <table class="table table-bordered">
-            <tbody>
-                <tr>
-                    <th>
-                        <tr>{{ IdCurso }}</tr>
-                        <tr>{{ Creditos }}</tr>
-                    </th>
+    <div class="card-body">
+        <!-- Card header -->
 
-                    <td id='{{IdCurso}}'>
-                        <tr>
-                            <h6>{{ NombreCurso }}</h6>
+        <!-- Heading -->
+        <a aria-expanded="true" aria-controls="collapseUnfiled">
 
-                        </tr>
-                        <tr>
+            <div class="row">
+                <div class="color-left">
 
-                            <a (click)='mostrar(IdSemestre,IdCurso)' data-toggle="collapse" data-parent="#accordionEx78" href='#id{{IdSemestre}}{{IdCurso}}' class="float-right"><i class="mdi mdi-eye" ></i></a>
+                    <p>{{ IdCurso }} <br> {{ Creditos }}</p>
 
-                            <a (click)='ocultar()' data-toggle="modal" href='#modal{{IdCurso}}' class="float-right">
-                                <i class="mdi mdi-pencil-circle"></i>
-                            </a>
+                </div>
+                <div class="color-mid" id='{{IdCurso}}'>
+                    <p class="float-center">{{ NombreCurso }}</p>
+                    <div>
 
-                        </tr>
-                    </td>
+                        <a (click)='mostrar(IdSemestre,IdCurso)' data-toggle="collapse" data-parent="#accordionEx78" href='#id{{IdSemestre}}{{IdCurso}}' class="float-right">
+                            <i class="mdi mdi-eye"></i>
+                        </a>
 
-                    <th>
-                        <tr></tr>
-                        <tr></tr>
-                    </th>
-                </tr>
-            </tbody>
+                        <a (click)='ocultar()' data-toggle="modal" href='#modal{{IdCurso}}' class="float-right">
+                            <i class="mdi mdi-pencil-circle"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="color-right ">
+                </div>
+            </div>
 
-        </table>
+        </a>
+
+        <div class="row" *ngIf='modalHidden' style="background-color: #FECDC0" id="collapsep">
+            <div id='id{{IdSemestre}}{{IdCurso}}' class="collapse" role="tabpanel" aria-labelledby="headingUnfiled" data-parent="#accordionEx78">
+                <div class="card-body">
+                    <div>
+
+                        <span class="font-weight-bold">Pre-Requisistos</span>
+                        <li *ngFor="let pre of prerequisitos" style="color: black;">{{pre.codigo}} {{pre.nombre}}</li>
+                        <br>
+                        <p class="font-weight-bold">Post-Requisistos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
 
+    </div>
 
-    </a>
 </div>
 
 
 <!-- Card body -->
-<div *ngIf='modalHidden' style="background-color: #FECDC0" id="collapsep">
-    <div id='id{{IdSemestre}}{{IdCurso}}' class="collapse" role="tabpanel" aria-labelledby="headingUnfiled" data-parent="#accordionEx78">
-        <div class="card-body">
-
-            <span class="font-weight-bold">Pre-Requisistos</span>
-            <li *ngFor="let pre of prerequisitos" style="color: black;">{{pre.codigo}} {{pre.nombre}}</li>
-            <br>
-            <p class="font-weight-bold">Post-Requisistos</p>
 
 
-        </div>
-    </div>
-</div>
-<br>
+
 
 
 <!-- Accordion card -->
