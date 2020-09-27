@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using banzapi.DAL;
 using banzapi.Models;
 using Newtonsoft.Json;
@@ -15,6 +16,7 @@ namespace banzapi.Controllers
     {
         [HttpPost] // POST: api/ESTUDIANTE
         [Route("api/Admin/Login")]
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
         public IHttpActionResult Post(FormDataCollection  form)
         {
             try

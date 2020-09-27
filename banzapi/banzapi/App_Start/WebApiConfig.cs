@@ -13,6 +13,7 @@ namespace banzapi
 
             config = GlobalConfiguration.Configuration;
 
+            config.EnableCors();
             config.Formatters.JsonFormatter
                 .SerializerSettings
                 .ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;

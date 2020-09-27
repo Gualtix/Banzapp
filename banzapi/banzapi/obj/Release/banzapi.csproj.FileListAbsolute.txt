@@ -72,3 +72,6 @@ C:\Users\Player2\Documents\Universidad\Banzapp\banzapi\banzapi\bin\es\System.Web
 C:\Users\Player2\Documents\Universidad\Banzapp\banzapi\banzapi\obj\Release\banzapi.csproj.CopyComplete
 C:\Users\Player2\Documents\Universidad\Banzapp\banzapi\banzapi\obj\Release\banzapi.dll
 C:\Users\Player2\Documents\Universidad\Banzapp\banzapi\banzapi\obj\Release\banzapi.pdb
+C:\Users\Player2\Documents\Universidad\Banzapp\banzapi\banzapi\bin\System.Web.Cors.dll
+C:\Users\Player2\Documents\Universidad\Banzapp\banzapi\banzapi\bin\System.Web.Http.Cors.dll
+C:\Users\Player2\Documents\Universidad\Banzapp\banzapi\banzapi\bin\System.Web.Http.Cors.xml
