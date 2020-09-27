@@ -5,12 +5,14 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Web.Http;
+using banzapi.CORS;
 using banzapi.DAL;
 using banzapi.Models;
 using Newtonsoft.Json;
 
 namespace banzapi.Controllers
 {
+    [AllowCrossSite]
     public class AdminController : ApiController
     {
         [HttpPost] // POST: api/ESTUDIANTE

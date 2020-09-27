@@ -1,4 +1,5 @@
-﻿using banzapi.DAL;
+﻿using banzapi.CORS;
+using banzapi.DAL;
 using Newtonsoft.Json;
 using System;
 using System.Linq;
@@ -6,6 +7,7 @@ using System.Web.Http;
 
 namespace banzapi.Controllers
 {
+    [AllowCrossSite]
     public class CursoController : ApiController
     {
         [HttpGet] // GET: api/Curso

@@ -4,12 +4,14 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using banzapi.CORS;
 using banzapi.DAL;
 using banzapi.Models;
 using Newtonsoft.Json;
 
 namespace banzapi.Controllers
 {
+    [AllowCrossSite]
     public class PensumController : ApiController
     {
         [HttpGet]

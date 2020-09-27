@@ -154,3 +154,16 @@ C:\Users\nikola\Desktop\analisis\Banzapp\banzapi\banzapi\obj\Debug\banzapi.cspro
 C:\Users\nikola\Desktop\analisis\Banzapp\banzapi\banzapi\obj\Debug\banzapi.csproj.CopyComplete
 C:\Users\nikola\Desktop\analisis\Banzapp\banzapi\banzapi\obj\Debug\banzapi.dll
 C:\Users\nikola\Desktop\analisis\Banzapp\banzapi\banzapi\obj\Debug\banzapi.pdb
+C:\Users\nikola\Desktop\analisis\Banzapp\banzapi\banzapi\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\nikola\Desktop\analisis\Banzapp\banzapi\banzapi\bin\System.Web.Helpers.dll
+C:\Users\nikola\Desktop\analisis\Banzapp\banzapi\banzapi\bin\System.Web.Mvc.dll
+C:\Users\nikola\Desktop\analisis\Banzapp\banzapi\banzapi\bin\System.Web.Razor.dll
+C:\Users\nikola\Desktop\analisis\Banzapp\banzapi\banzapi\bin\System.Web.WebPages.Deployment.dll
+C:\Users\nikola\Desktop\analisis\Banzapp\banzapi\banzapi\bin\System.Web.WebPages.dll
+C:\Users\nikola\Desktop\analisis\Banzapp\banzapi\banzapi\bin\System.Web.WebPages.Razor.dll
+C:\Users\nikola\Desktop\analisis\Banzapp\banzapi\banzapi\bin\System.Web.Helpers.xml
+C:\Users\nikola\Desktop\analisis\Banzapp\banzapi\banzapi\bin\System.Web.Mvc.xml
+C:\Users\nikola\Desktop\analisis\Banzapp\banzapi\banzapi\bin\System.Web.Razor.xml
+C:\Users\nikola\Desktop\analisis\Banzapp\banzapi\banzapi\bin\System.Web.WebPages.xml
+C:\Users\nikola\Desktop\analisis\Banzapp\banzapi\banzapi\bin\System.Web.WebPages.Deployment.xml
+C:\Users\nikola\Desktop\analisis\Banzapp\banzapi\banzapi\bin\System.Web.WebPages.Razor.xml
